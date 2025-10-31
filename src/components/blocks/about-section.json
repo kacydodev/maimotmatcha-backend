@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_blocks_about_sections",
+  "info": {
+    "displayName": "Hero Section",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "cta": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
