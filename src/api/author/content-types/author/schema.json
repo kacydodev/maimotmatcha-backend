@@ -4,7 +4,7 @@
   "info": {
     "singularName": "author",
     "pluralName": "authors",
-    "displayName": "Author",
+    "displayName": "Customer",
     "description": "Create authors for your content"
   },
   "options": {
@@ -28,11 +28,18 @@
     "address": {
       "type": "string"
     },
-    "articles": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::article.article",
-      "mappedBy": "author"
+    "statement": {
+      "type": "text"
+    },
+    "backgroundImage": {
+      "type": "component",
+      "component": "elements.background-image",
+      "repeatable": false
+    },
+    "cta": {
+      "type": "component",
+      "component": "elements.button-link",
+      "repeatable": false
     }
   }
 }

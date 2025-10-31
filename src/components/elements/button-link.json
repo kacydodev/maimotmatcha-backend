@@ -1,12 +1,15 @@
 {
-  "collectionName": "components_shared_links",
+  "collectionName": "components_elements_button_links",
   "info": {
-    "displayName": "Link",
-    "icon": "attachment"
+    "displayName": "ButtonLink",
+    "icon": "link"
   },
   "options": {},
   "attributes": {
-    "link": {
+    "title": {
+      "type": "string"
+    },
+    "href": {
       "type": "string"
     },
     "isExternal": {

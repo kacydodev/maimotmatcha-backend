@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_blocks_about_sections",
+  "collectionName": "components_blocks_hero_sections",
   "info": {
-    "displayName": "Hero Section",
-    "icon": "apps"
+    "displayName": "Hero Section"
   },
   "options": {},
   "attributes": {
@@ -12,7 +11,15 @@
     "subtitle": {
       "type": "string"
     },
-    "backgroundImage": {
+    "description": {
+      "type": "text"
+    },
+    "cta": {
+      "type": "component",
+      "component": "elements.button-link",
+      "repeatable": false
+    },
+    "background": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -21,14 +28,6 @@
         "videos",
         "audios"
       ]
-    },
-    "cta": {
-      "type": "component",
-      "component": "shared.link",
-      "repeatable": false
-    },
-    "description": {
-      "type": "text"
     }
   },
   "config": {}

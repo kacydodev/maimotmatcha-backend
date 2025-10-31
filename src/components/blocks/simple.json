@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_simples",
+  "info": {
+    "displayName": "Simple Section"
+  },
+  "options": {},
+  "attributes": {
+    "cta": {
+      "type": "component",
+      "component": "elements.button-link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

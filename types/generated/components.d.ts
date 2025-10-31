@@ -1,89 +1,53 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface BlocksAboutSeciont extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_about_secionts';
-  info: {
-    displayName: 'About Seciont';
-    icon: 'apps';
-  };
-  attributes: {
-    description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface BlocksAboutSection extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_about_sections';
+export interface BlocksHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_hero_sections';
   info: {
     displayName: 'Hero Section';
-    icon: 'apps';
   };
   attributes: {
-    backgroundImage: Schema.Attribute.Media<
+    background: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    cta: Schema.Attribute.Component<'shared.link', false>;
+    cta: Schema.Attribute.Component<'elements.button-link', false>;
     description: Schema.Attribute.Text;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
 
-export interface BlocksProductsSection extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_products_sections';
+export interface BlocksSimple extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_simples';
   info: {
-    displayName: 'Products Section';
-    icon: 'apps';
+    displayName: 'Simple Section';
   };
   attributes: {
-    products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
+    cta: Schema.Attribute.Component<'elements.button-link', false>;
   };
 }
 
-export interface BlocksTestimonialsSection extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_testimonials_sections';
+export interface ElementsBackgroundImage extends Struct.ComponentSchema {
+  collectionName: 'components_elements_background_images';
   info: {
-    displayName: 'Testimonials Section';
+    displayName: 'BackgroundImage';
+    icon: 'picture';
   };
   attributes: {
-    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
+    alt: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    url: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
-export interface SharedLink extends Struct.ComponentSchema {
-  collectionName: 'components_shared_links';
+export interface ElementsButtonLink extends Struct.ComponentSchema {
+  collectionName: 'components_elements_button_links';
   info: {
-    displayName: 'Link';
-    icon: 'attachment';
+    displayName: 'ButtonLink';
+    icon: 'link';
   };
   attributes: {
+    href: Schema.Attribute.String;
     isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    link: Schema.Attribute.String;
-  };
-}
-
-export interface SharedMedia extends Struct.ComponentSchema {
-  collectionName: 'components_shared_media';
-  info: {
-    displayName: 'Media';
-    icon: 'file-video';
-  };
-  attributes: {
-    cta: Schema.Attribute.Component<'shared.link', true>;
-    description: Schema.Attribute.Blocks;
-    file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-  };
-}
-
-export interface SharedQuote extends Struct.ComponentSchema {
-  collectionName: 'components_shared_quotes';
-  info: {
-    displayName: 'Quote';
-    icon: 'indent';
-  };
-  attributes: {
-    body: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
@@ -106,13 +70,10 @@ export interface SharedSeo extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'blocks.about-seciont': BlocksAboutSeciont;
-      'blocks.about-section': BlocksAboutSection;
-      'blocks.products-section': BlocksProductsSection;
-      'blocks.testimonials-section': BlocksTestimonialsSection;
-      'shared.link': SharedLink;
-      'shared.media': SharedMedia;
-      'shared.quote': SharedQuote;
+      'blocks.hero-section': BlocksHeroSection;
+      'blocks.simple': BlocksSimple;
+      'elements.background-image': ElementsBackgroundImage;
+      'elements.button-link': ElementsButtonLink;
       'shared.seo': SharedSeo;
     }
   }

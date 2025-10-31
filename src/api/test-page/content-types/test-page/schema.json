@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "test_pages",
+  "info": {
+    "singularName": "test-page",
+    "pluralName": "test-pages",
+    "displayName": "TestPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "background": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.simple"
+      ]
+    }
+  }
+}

@@ -1,15 +1,18 @@
 {
-  "collectionName": "components_blocks_about_secionts",
+  "collectionName": "components_elements_background_images",
   "info": {
-    "displayName": "About Seciont",
-    "icon": "apps"
+    "displayName": "BackgroundImage",
+    "icon": "picture"
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
-    "image": {
+    "alt": {
+      "type": "string"
+    },
+    "url": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -18,9 +21,6 @@
         "videos",
         "audios"
       ]
-    },
-    "description": {
-      "type": "text"
     }
   },
   "config": {}
