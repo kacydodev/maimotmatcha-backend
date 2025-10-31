@@ -481,14 +481,9 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   attributes: {
     address: Schema.Attribute.String;
     avatar: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-    backgroundImage: Schema.Attribute.Component<
-      'elements.background-image',
-      false
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    cta: Schema.Attribute.Component<'elements.button-link', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -580,7 +575,12 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
   attributes: {
     blocks: Schema.Attribute.DynamicZone<
-      ['blocks.hero-section', 'blocks.about-section', 'blocks.product-section']
+      [
+        'blocks.hero-section',
+        'blocks.about-section',
+        'blocks.product-section',
+        'blocks.testimonial-section',
+      ]
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

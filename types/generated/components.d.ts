@@ -52,6 +52,17 @@ export interface BlocksSimple extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksTestimonialSection extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_testimonial_sections';
+  info: {
+    displayName: 'Testimonial Section';
+  };
+  attributes: {
+    customers: Schema.Attribute.Relation<'oneToMany', 'api::author.author'>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsBackgroundImage extends Struct.ComponentSchema {
   collectionName: 'components_elements_background_images';
   info: {
@@ -100,6 +111,7 @@ declare module '@strapi/strapi' {
       'blocks.hero-section': BlocksHeroSection;
       'blocks.product-section': BlocksProductSection;
       'blocks.simple': BlocksSimple;
+      'blocks.testimonial-section': BlocksTestimonialSection;
       'elements.background-image': ElementsBackgroundImage;
       'elements.button-link': ElementsButtonLink;
       'shared.seo': SharedSeo;

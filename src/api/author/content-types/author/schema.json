@@ -30,16 +30,6 @@
     },
     "statement": {
       "type": "text"
-    },
-    "backgroundImage": {
-      "type": "component",
-      "component": "elements.background-image",
-      "repeatable": false
-    },
-    "cta": {
-      "type": "component",
-      "component": "elements.button-link",
-      "repeatable": false
     }
   }
 }
