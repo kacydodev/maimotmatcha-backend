@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlocksAboutSection extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_about_sections';
+  info: {
+    displayName: 'About Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_blocks_hero_sections';
   info: {
@@ -12,6 +24,20 @@ export interface BlocksHeroSection extends Struct.ComponentSchema {
     cta: Schema.Attribute.Component<'elements.button-link', false>;
     description: Schema.Attribute.Text;
     subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksProductSection extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_product_sections';
+  info: {
+    displayName: 'Product Section';
+  };
+  attributes: {
+    categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    >;
     title: Schema.Attribute.String;
   };
 }
@@ -70,7 +96,9 @@ export interface SharedSeo extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blocks.about-section': BlocksAboutSection;
       'blocks.hero-section': BlocksHeroSection;
+      'blocks.product-section': BlocksProductSection;
       'blocks.simple': BlocksSimple;
       'elements.background-image': ElementsBackgroundImage;
       'elements.button-link': ElementsButtonLink;
