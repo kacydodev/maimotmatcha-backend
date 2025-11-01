@@ -48,7 +48,10 @@ export interface BlocksSimple extends Struct.ComponentSchema {
     displayName: 'Simple Section';
   };
   attributes: {
-    cta: Schema.Attribute.Component<'elements.button-link', false>;
+    categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    >;
   };
 }
 

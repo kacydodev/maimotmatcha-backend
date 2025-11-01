@@ -5,10 +5,10 @@
   },
   "options": {},
   "attributes": {
-    "cta": {
-      "type": "component",
-      "component": "elements.button-link",
-      "repeatable": false
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category"
     }
   },
   "config": {}
